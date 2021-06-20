@@ -12,7 +12,7 @@ Credentials.js
 google-services.json
 GoogleService-Info.plist
 app.json
-GoogleBooksKey.js
+GoogleKey.js
 
 # macOS
 .DS_Store

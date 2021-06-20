@@ -1,7 +1,7 @@
 // ./api/GoogleBooksServer.js
 
 import axios from 'axios';
-import { GOOGLE_BOOKS_KEY } from './GoogleBooksKey';
+import { GOOGLE_KEY } from './GoogleKey';
 
 // Create server
 const GoogleBooksServer = axios.create({
@@ -9,10 +9,8 @@ const GoogleBooksServer = axios.create({
 });
 
 export const getBooks = async (query) => {
-    console.log(`Query: ${query}`);
     const response = await GoogleBooksServer.get(
-        `?q=${query}&key=${GOOGLE_BOOKS_KEY}&printType=books&orderBy=newest`);
-    console.log('Response data: ', response.data);
+        `?q=${query}&key=${GOOGLE_KEY}&printType=books&orderBy=newest`);
     return response.data;
 };
 

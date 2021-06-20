@@ -5,9 +5,9 @@ import { ScrollView, StyleSheet, Text, View, Button, Linking, FlatList, Touchabl
 import { AntDesign } from '@expo/vector-icons';
 import { Image, ListItem } from 'react-native-elements';
 
+import { initFavoritesDatabase, storeFavoritesItem, getFavoritesItem, setupFavoritesListener } 
+    from '../firebase/Helpers.js';
 import { getBooks } from '../api/GoogleBooksServer';
-//import { initFavoritesDatabase, storeFavoritesItem, getFavoritesItem, setupFavoritesListener } 
-//    from '../firebase/Helpers.js';
 
 const initialFavorites = [
     { name: 'Birdwatching backpack', id: 598759174, hearted: false },
@@ -42,11 +42,20 @@ const ItemRecord = ({route, navigation}) => {
         setToggle(!toggle);
     };
 
-    // Run only once
+    // Initialize Firebase database
+    useEffect(() => {
+        try {
+            initFavoritesDatabase();
+        } catch (err) {
+            console.log(err);
+        }
+        setupFavoritesListener('score');
+    }, []);
+
+    // Pull book list; run only once, when component is instantianted
     useEffect(() => {
         getBooks(itemInfo.query)
             .then(response => {
-                console.log(`Data received from GoogleBooksServer: `, response);
                 setBooks(response.items);
             }) 
     }, []);

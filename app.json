@@ -17,16 +17,34 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lib.beyondbooks",
+	  "buildNumber": "1.0.0",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "edu.gvsu.reminders",
+	  "versionCode": 1,
+	  "googleServicesFile": "./google-services.json"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyDoT1HJ2Xfn94WQWGOwtYr6heOwzg_5i2o",
+          "authDomain": "beyond-books.firebaseapp.com",
+          "databaseURL": "https://beyond-books-default-rtdb.firebaseio.com",
+          "projectId": "beyond-books",
+          "storageBucket": "beyond-books.appspot.com",
+          "messagingSenderId": "28956125593",
+          "appId": "1:28956125593:web:f75179c14501ec2fd64b08",
+          "measurementId": "G-ZB50LFMM7J"
+        }
+      }      
     }
   }
 }

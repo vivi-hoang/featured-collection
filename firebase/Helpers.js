@@ -29,25 +29,11 @@ export function getFavoritesItem() {
 
 // Get data back from database
 // Pass in a key and listen for updates on that key
-export function setupFavoritesListener(updateFunc) {
+export function setupFavoritesListener(key) {
     firebase
         .database()
         .ref('favoritesData/')
         .on('value', (snapshot) => {
             console.log('setupFavoritesListener fires up with ', snapshot);
-            if (snapshot?.val()) {
-                const firebaseObject = snapshot.val();
-                const newArr = [];
-                // Extract object from each key and make new mapping
-                Object.keys(firebaseObject).map((key, index) => {
-                    console.log(key, '||', index, '||', firebaseObject[key]);
-                    // Push into array the Favorites object with unique key as attribute
-                    // All Favorites items with IDs attached on each item to ensure they're unique
-                    newArr.push({ ...firebaseObject[key], id: key});
-                });
-                updateFunc(newArr);                
-            } else {
-                updateFunc([]);
-            }
         });
 }
