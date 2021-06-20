@@ -185,13 +185,13 @@ const ItemRecord = ({route, navigation}) => {
                             <Text style = { styles.metadataTitle }>NOTES</Text>
                             <Text style = { styles.metadata }>{ itemInfo.notes }</Text>
                             <Text style = { [styles.note, styles.metadata] }>Please check on an item's availability in the KDL Catalog before visiting a KDL branch for pickup.</Text>
-                            { renderLocationsButton(itemInfo.id) }
-                            { renderCatalogButton(itemInfo.id) }
+                            <View style = {styles.buttonContainer}>                                
+                                { renderCatalogButton(itemInfo.id) }
+                                { renderLocationsButton(itemInfo.id) }
+                            </View>                          
                             <Text style = { styles.metadataTitle }>RELATED READING</Text>
                         </View>
-                    </>}
-                    
-                    
+                    </>}                  
                     data = { books }
                     keyExtractor = { (item) => item.id }
                     // If book array changes, re-render and include that data
@@ -234,14 +234,18 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     holdButton: {
-        width: '50%',
+        width: '45%',
         alignSelf: 'center',
         marginBottom: 5,
     },
     catalogButton: {
-        width: '95%',
-        alignSelf: 'center',
+        width: '45%',
         marginBottom: 5,
+    },
+    buttonContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly'
     },
     bookList: {
         flex: 1,

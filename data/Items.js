@@ -8,7 +8,7 @@ export const COLLECTION_ITEMS = [
         category: 4,
         imageURL: 'https://photos.smugmug.com/photos/i-D3vLKNF/0/a2783a24/O/i-D3vLKNF.png',
         characteristics: '1 backpack containing bird watching activity kit',
-        notes: 'EGR Bird watching backpack contains: 2 binoculars in carrying cases + 2 books + bird sightings folder.\nCAS Bird watching backpack contains: 1 binocular in carrying bag + Bird observations field notebook + 1 ballpoint pen + 1 list of birds observed at CAS branch.\n       Patrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\n        Kit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
+        notes: 'EGR Bird watching backpack contains: 2 binoculars in carrying cases + 2 books + bird sightings folder.\nCAS Bird watching backpack contains: 1 binocular in carrying bag + Bird observations field notebook + 1 ballpoint pen + 1 list of birds observed at CAS branch.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: '',
         query: 'michigan+birdwatching',
         locations: ['CAS', 'EGR']
