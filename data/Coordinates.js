@@ -5,106 +5,148 @@ export const BRANCH_COORDINATES = [
     {
         title: 'Alpine Township Branch',
         latitude: 43.058860,
-        longitude: -85.691440
+        longitude: -85.691440,
+        address: '5255 Alpine Ave NW, Comstock Park, MI 49321',
+        url: 'https://goo.gl/maps/Xv9w2FaSyF8qfaKf8',
     },
     {
         title: 'Alto Branch', 
         latitude: 42.855220, 
-        longitude: -85.383230
+        longitude: -85.383230,
+        address: '6071 Linfield Ave SE, Alto, MI 49302',
+        url: 'https://goo.gl/maps/PowshGhHqWSHRJ21A',
     },
     {
         title: 'Amy Van Andel Library (Ada)',
         latitude: 42.956410,
-        longitude: -85.487790
+        longitude: -85.487790,
+        address: '7215 Headley St SE UNIT 309, Ada, MI 49301',
+        url: 'https://goo.gl/maps/EfWdSGqMM8m4uQjU7',
     },
     {
         title: 'Byron Township Branch',
         latitude: 42.815970,
-        longitude: -85.723070
+        longitude: -85.723070,
+        address: '8191 Byron Center Ave SW, Byron Center, MI 49315',
+        url: 'https://goo.gl/maps/tatoKiCXoGKTjkw99',
     },
     {
         title: 'Caledonia Township Branch',
         latitude: 42.79743658276122, 
-        longitude: -85.51008508740414
+        longitude: -85.51008508740414,
+        address: '6260 92nd St SE, Caledonia, MI 49316',
+        url: 'https://goo.gl/maps/gz1gHBe3vsbo1R3W9',
     },
     {
         title: 'Cascade Township Branch',
         latitude: 42.91220395839405, 
-        longitude:-85.50470511201829
+        longitude:-85.50470511201829, 
+        address: '2870 Jacksmith Ave SE, Grand Rapids, MI 49546',
+        url: 'https://goo.gl/maps/SHuZSUqRxLx1gcJ3A',
     }, 
     {
         title: 'Comstock Park Branch',
         latitude: 43.03409093066672, 
-        longitude: -85.66635643157636
+        longitude: -85.66635643157636, 
+        address: '3943 W River Dr NE, Comstock Park, MI 49321',
+        url: 'https://goo.gl/maps/1YgSDVKjqh45bpth8',
     },
     {
         title: 'East Grand Rapids',
         latitude: 42.94841477030069, 
-        longitude: -85.6109673739071
+        longitude: -85.6109673739071, 
+        address: '746 Lakeside Dr SE, East Grand Rapids, MI 49506',
+        url: 'https://goo.gl/maps/p7KHWnZfJasHrEL56',
     },
     {
         title: 'Englehart (Lowell) Branch',
         latitude: 42.94848544868577, 
-        longitude: -85.61103174692538
+        longitude: -85.61103174692538, 
+        address: '200 N Monroe St, Lowell, MI 49331',
+        url: 'https://goo.gl/maps/dqkKx7TYddgVNkwRA',
     },
     {
         title: 'Gaines Township Branch',
         latitude: 42.841201513780746, 
-        longitude: -85.65369922972957
+        longitude: -85.65369922972957,
+        address: '421 68th St SE, Grand Rapids, MI 49548',
+        url: 'https://goo.gl/maps/zJvptwztiGcZCxss9',
     },
     {
         title: 'Grandville Branch',
         latitude: 42.907923720839676, 
-        longitude: -85.76443708739959
+        longitude: -85.76443708739959,
+        address: '4055 Maple St SW, Grandville, MI 49418',
+        url: 'https://goo.gl/maps/AyApPgrXJwKxykUc8',
     },
     {
         title: 'KDL Service and Meeting Center',
         latitude: 43.0466716760122, 
-        longitude: -85.65434556226688
+        longitude: -85.65434556226688,
+        address: '814 W River Center Dr NE, Comstock Park, MI 49321',
+        url: 'https://goo.gl/maps/AU9rpWpiFGmh4tUQ8'
     },
     {
         title: 'Kelloggsville Branch',
         latitude: 42.87680734974295, 
-        longitude: -85.66520886041917
+        longitude: -85.66520886041917,
+        address: '4787 Division Ave S, Grand Rapids, MI 49548',
+        url: 'https://goo.gl/maps/ABM8cBNtLJtHfmmY8',
     },
     {
         title: 'Kentwood (Richard L. Root) Branch',
         latitude: 42.8739957322891, 
-        longitude: -85.59583331809206
+        longitude: -85.59583331809206,
+        address: '4950 Breton Rd SE, Kentwood, MI 49508',
+        url: 'https://goo.gl/maps/L9JdEdiEcxUoCpay9',
     },
     {
         title: 'Krause Memorial (Rockford) Branch',
         latitude: 43.119730929827135, 
-        longitude: -85.55793537575474
+        longitude: -85.55793537575474,
+        address: '140 E Bridge St NE, Rockford, MI 49341',
+        url: 'https://goo.gl/maps/a8EpFFxwAGL5DJqb8',
     },
     {
         title: 'Nelson Township Branch',
         latitude: 43.293528350045776, 
-        longitude: -85.52176862971113
+        longitude: -85.52176862971113,
+        address: '88 Bass Lake Rd, Sand Lake, MI 49343',
+        url: 'https://goo.gl/maps/5afq7vviHn8ahdMBA',
     },
     {
         title: 'Plainfield Township Branch',
         latitude: 43.04259998990122, 
-        longitude: -85.60348047204863
+        longitude: -85.60348047204863, 
+        address: '2650 5 Mile Rd NE, Grand Rapids, MI 49525',
+        url: 'https://goo.gl/maps/vt6sRoZS3xVVre7b8',
     },
     {
         title: 'Spencer Township Branch',
         latitude: 43.23872059973525, 
-        longitude: -85.36820423156799
+        longitude: -85.36820423156799,
+        address: '14960 Meddler Ave NE, Gowen, MI 49326',
+        url: 'https://goo.gl/maps/Ld9jAQJ7JCTv6rVNA',
     },
     {
         title: 'Tyrone Township Branch',
         latitude: 43.21887208077001, 
-        longitude: -85.7516381045871
+        longitude: -85.7516381045871,
+        address: '43 S Main St, Kent City, MI 49330',
+        url: 'https://goo.gl/maps/hQ5dTS57Vv8YXPFu8',
     },
     {
         title: 'Walker Branch',
         latitude: 43.00762070889039, 
-        longitude: -85.77394365670447
+        longitude: -85.77394365670447,
+        address: '4293 Remembrance Rd NW, Walker, MI 49534',
+        url: 'https://goo.gl/maps/mTpbSvFwkou777qL6',
     },
     {
         title: 'Wyoming Branch and KDl Talking Book & Braille Center',
         latitude: 42.90373618550633, 
-        longitude: -85.69464548689156
+        longitude: -85.69464548689156,
+        address: '3350 Michael Ave SW, Wyoming, MI 49509',
+        url: 'https://goo.gl/maps/3KC6Sn5jacZDjmpf6',
     },
 ]

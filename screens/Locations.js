@@ -1,8 +1,8 @@
 // ./screens/Locations.js
 
 import React, { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text } from "react-native";
-import MapView, { Marker } from 'react-native-maps';
+import { Linking, StyleSheet, Text, View } from "react-native";
+import MapView, { Marker, Callout } from 'react-native-maps';
 
 // Data
 import { COLLECTION_ITEMS } from '../data/Items';
@@ -89,20 +89,30 @@ const Locations = ({route, navigation}) => {
             region = { region }
             onRegionChangeComplete = { region => setRegion(region)}
         >
-
             { branchCoords.map((coords, index) => {
                 return(
                     <Marker
                         key = { index }
-                        title = { coords.title }
                         coordinate = {{         
                             latitude: coords.latitude,
                             longitude: coords.longitude,
                         }}
-                    />
+                    >
+                        <Callout
+                            onPress = {() => {
+                                Linking.openURL(`${coords.url}`)
+                                
+                            }}
+                        >
+                            <View>
+                                <Text style = { styles.branchName }> {coords.title} </Text>
+                                <Text> {coords.address} </Text>
+                            </View>
+                        </Callout>
+                    </Marker>
                 )
             })}
-
+                
         </MapView>
     );
 };
@@ -114,6 +124,9 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         marginRight: 5,
     },
+    branchName: {
+        fontWeight: 'bold'
+    }
 });
 
 export default Locations;
