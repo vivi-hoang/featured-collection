@@ -8,6 +8,11 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+Credentials.js
+google-services.json
+GoogleService-Info.plist
+app.json
+GoogleBooksKey.js
 
 # macOS
 .DS_Store
