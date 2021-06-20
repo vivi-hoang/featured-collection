@@ -5,8 +5,6 @@ import { ScrollView, StyleSheet, Text, View, Button, Linking, FlatList, Touchabl
 import { AntDesign } from '@expo/vector-icons';
 import { Image, ListItem } from 'react-native-elements';
 
-import { initFavoritesDatabase, storeFavoritesItem, getFavoritesItem, setupFavoritesListener } 
-    from '../firebase/Helpers.js';
 import { getBooks } from '../api/GoogleBooksServer';
 
 const initialFavorites = [
@@ -41,16 +39,6 @@ const ItemRecord = ({route, navigation}) => {
     const toggleFunction = () => {
         setToggle(!toggle);
     };
-
-    // Initialize Firebase database
-    useEffect(() => {
-        try {
-            initFavoritesDatabase();
-        } catch (err) {
-            console.log(err);
-        }
-        setupFavoritesListener('score');
-    }, []);
 
     // Pull book list; run only once, when component is instantianted
     useEffect(() => {
@@ -95,8 +83,8 @@ const ItemRecord = ({route, navigation}) => {
         return(
             <View style = { styles.catalogButton }>
                 <Button 
-                    title = 'Pickup Locations'
-                    onPress = {() => { }}
+                    title = 'Item Locations'
+                    onPress = {() => { navigation.navigate('Locations', itemInfo.locations) }}
                     color = '#221868' // Dark blue-purple
                 />
             </View>
@@ -192,6 +180,7 @@ const ItemRecord = ({route, navigation}) => {
             <Text style = { styles.metadata }>{ itemInfo.characteristics }</Text>
             <Text style = { styles.metadataTitle }>NOTES</Text>
             <Text style = { styles.metadata }>{ itemInfo.notes }</Text>
+            <Text style = { [styles.note, styles.metadata] }>Please check on an item's availability in the KDL Catalog before visiting a KDL branch for pickup.</Text>
             { renderLocationsButton(itemInfo.id) }
             { renderCatalogButton(itemInfo.id) }
             <Text style = { styles.metadataTitle }>RELATED READING</Text>
@@ -234,6 +223,10 @@ const styles = StyleSheet.create({
     },
     metadata: {
         marginBottom: 10,
+    },
+    note: {
+        fontStyle: 'italic',
+        fontWeight: 'bold'
     },
     holdButton: {
         width: '50%',

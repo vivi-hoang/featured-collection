@@ -9,6 +9,7 @@ import CategoryItems from '../screens/CategoryItems';
 import AllItems from '../screens/AllItems';
 import ItemRecord from '../screens/ItemRecord';
 import BookViewer from '../screens/BookViewer';
+import Locations from '../screens/Locations';
 import Favorites from '../screens/Favorites';
 
 const Stack = createStackNavigator();
@@ -30,6 +31,7 @@ const MainStackNavigator = () => {
             <Stack.Screen name='Category Items' component = { CategoryItems } />
             <Stack.Screen name='Item Record' component = { ItemRecord } />
             <Stack.Screen name='Book Preview' component = { BookViewer } />
+            <Stack.Screen name='Locations' component = { Locations } />
         </Stack.Navigator>
     );
 }
@@ -50,6 +52,7 @@ const ItemStackNavigator = () => {
             <Stack.Screen name='All Items' component = { AllItems } />
             <Stack.Screen name='Item Record' component = { ItemRecord } />
             <Stack.Screen name='Book Preview' component = { BookViewer } />
+            <Stack.Screen name='Locations' component = { Locations } />
         </Stack.Navigator>
     );
 }

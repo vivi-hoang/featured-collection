@@ -11,6 +11,7 @@ export const COLLECTION_ITEMS = [
         notes: 'EGR Bird watching backpack contains: 2 binoculars in carrying cases + 2 books + bird sightings folder.\nCAS Bird watching backpack contains: 1 binocular in carrying bag + Bird observations field notebook + 1 ballpoint pen + 1 list of birds observed at CAS branch.\n       Patrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\n        Kit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: '',
         query: 'michigan+birdwatching',
+        locations: ['CAS', 'EGR']
     },
     {
         id: 797984174,
@@ -21,6 +22,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Chromebook and hotspot models, and accompanying materials may vary.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to a staff member at any branch before the end of library hours the next day.\nContent on the device will be returned to the library\'s default content choices at the end of each use. Any content added by the cardholder during their checkout period will be removed from the device.\nChromebook models: Samsung XE500C13 (PFD) and Samsung XE310XBA (ALP, BYR, COM, EGR, GDV, KWD, LOW, TYR, WAL, WYO). Hotspot models: Verizon Orbic Speet RC400L, Verizon Ellipsis MHS900L, Verizon Jetpack MiFi 7730L.',
         summary: '',
         query: 'chromebook',
+        locations: ['ALP', 'BYR', 'COM', 'EGR', 'GDV', 'KWD', 'PFD', 'TYR', 'WAL']
     },
     {
         id: 441869174,
@@ -31,6 +33,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Patrons must provide their own Micro SD card, and to retrieve it before returning the kit to the library.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: 'This kit can be used for making home movies.',
         query: 'gopro',
+        locations: ['ALP', 'ALT', 'ADA', 'BYR', 'CAL', 'CAS', 'COM', 'EGR', 'ENG', 'GNS', 'KWD', 'NEL', 'PFD', 'WAL', 'WYO']
     },
     {
         id: 810990174,
@@ -41,6 +44,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Patrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: 'This green cross line laser projects bright crossing horizontal and vertical lines for various leveling and layout applications.',
         query: 'home+improvement',
+        locations: ['SC']
     },
     {
         id: 438196174,
@@ -51,6 +55,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Patrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nThis kit must be picked up at and returned to the Cascade Library only.\nKit description for older kit: 1 x 10\' x 12\' Chroma key green screen + 4 x cross bar pieces for green screen stand + 2 x background stands, each has three black plastic wing nuts attached + 2 x 33" white shoot through umbrellas + 2 x 7\' light stands, each has three black plastic wing nuts attached + 2 x lamp holders for top of light stands, each has three black plastic wing nuts attached + 2 x 105W CFL light bulbs bubble-wrapped and in styrofoam boxes + 1 x KDL Alliance of Friends tote bag + 1 x large black duffel bag with a detachable shoulder strap for entire kit.\nReplacement costs for older kit: 1 x 10\' x 12\' Chroma key green screen - $29.99 ; 1 x green stand - $34.90 (includes 4 x cross bar pieces for green screen stand, 2 x background stands, each has three black plastic wing nuts attached (individual wingnuts $5.00 each) ; 2 x 33" white shoot through umbrellas - $9.25 per umbrella ; 2 x 7\' light stands, each has three black plastic wing nuts attached - $23.07 per light stand (individual wingnuts $5.00 each) ; 2 x lamp holders for top of light stands, each has three black plastic wing nuts attached - $6.99 per lamp holder (individual wingnuts $5.00 each) ; 2 x 105W CFL light bulbs bubble-wrapped and in styrofoam boxes - $24.99 per lightbulb and box ; 1 x KDL Alliance of Friends tote bag - $3.00 ; 1 x large black duffel bag with a detachable shoulder strap - $20.00 ; 1 x shoulder strap only - $10.00.',
         summary: 'This kit can be used for making home movies.',
         query: 'green+screen+video',
+        locations: ['CAS']
     },
     {
         id: 186464174,
@@ -61,6 +66,7 @@ export const COLLECTION_ITEMS = [
         notes: 'iPad models and accompanying materials vary.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.\nContent on the device will be returned to the library\'s default content choices at the end of each use. Any content added by the cardholder during their checkout period will be removed from the device.',
         summary: '',
         query: 'ipad',
+        locations: ['ALP', 'ALT', 'ADA', 'BYR', 'CAL', 'CAS', 'COM', 'EGR', 'ENG', 'GNS', 'GDV', 'KEL', 'KWD', 'KRA', 'NEL', 'PFD', 'SPE', 'TYR', 'WAL', 'WYO']
     },
     {
         id: 451283174,
@@ -71,6 +77,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Patrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nOvernight loan - due at close the next open day.\nKDL Cruiser lock/key must be returned directly to a staff member at the branch where it was checked out.\nNot holdable by any patron.',
         summary: 'KDL Cruiser can be used for riding trails near libraries.',
         query: 'cycling',
+        locations: ['ADA', 'CAL', 'COM', 'EGR', 'GDV', 'KWD', 'KRA', 'NEL', 'WAL', 'WYO']
     },
     {
         id: 188154174,
@@ -81,6 +88,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Patrons must be 18 years of age or older to borrow the kit. Libtary\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: 'Device is used to accurately measure power consumption of household appliances and to determine actual cost of power consumed.',
         query: 'eco-friendly+sustainable+green+home+house',
+        locations: ['CAS', 'SC']
     },
     {
         id: 571411174,
@@ -91,6 +99,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Patrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\n  Kit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: '',
         query: 'nintendo+switch+guide',
+        locations: ['ALP', 'ALT', 'ADA', 'BYR', 'CAL', 'CAS', 'COM', 'EGR', 'ENG', 'GNS', 'GDV', 'KEL', 'KWD', 'KRA', 'NEL', 'PFD', 'SPE', 'TYR', 'WAL', 'WYO']
     },
     {
         id: 811229174,
@@ -101,6 +110,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Nintendo Switch system (not included) required to play.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: 'Explore a fantasy adventure world to defeat a bodybuilding dragon and his minions using real-life exercises! -- from Nintendo website. ESRB rating: E10+ (everyone 10+)',
         query: 'nintendo+switch+ring+fit',
+        locations: ['SC']
     },
     {
         id: 810272174,
@@ -111,6 +121,7 @@ export const COLLECTION_ITEMS = [
         notes: '"For best results, connect your FireStick, Roku, or Apple TV via HDMI for instant entertainment. For wireless streaming, it is recommended to use Chrome browser from your computer to mirror contents wirelessly to GS2. Note: Copyrighted content from streaming platforms (Netflix, Prime Video, Hulu, etc.) cannot be mirrored from phones and tablets to GS2 at this moment" -- from Amazon item description.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nThis kit must be checked out/in both Projector kit (part 1 of 2) and Screen kit (part 2 of 2) together.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: 'This kit can be used for outdoor use.',
         query: 'movie+guide',
+        locations: ['SC']
     },
     {
         id: 645852174,
@@ -121,6 +132,7 @@ export const COLLECTION_ITEMS = [
         notes: 'The three utility cords and instruction manual are contained inside the carrying bag attached to the turntable with a carabiner.\n4 ADA items circulate with Audio-Technica headphone (ATH-ANC20) along with one cable, one airline adapter, and instruction sheet, all contained inside the separate carrying bag also attached to the turntable with a carabiner. Replacement cost for headphone set is $49.00.\nPatrons must be 18 years of age or older to borrow the Portable turntable. They must present both a current Kent district Library card and a photo ID. The library\'s Portable turntable Borrowing Agreement must be completed with each checkout, acknowledging financial responsibility for lost, stolen or damaged equipment.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: 'This 3-speed portable turntable can be used to listen vinyl records.',
         query: 'vinyl+records',
+        locations: ['ADA', 'CAS', 'EGR', 'GDV', 'KWD', 'KRA', 'PFD', 'WYO']
     },
     {
         id: 658724174,
@@ -131,6 +143,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Remember to include all headphones, cases, chargers and cables when you return the Silent disco kit to the owning library.\nPatrons must be 18 years of age or older to borrow the Silent disco kit. They must present both a current Kent District Library card and a photo ID. The library\'s Silent disco kit Agreement must be completed with each checkout, acknowledging financial responsibility for lost, stolen or damaged equipment.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nThis kit must be picked up and returned directly to the staff at the owning branch only.',
         summary: 'This silent disco kit allows large groups of people to enjoy music together without creating sound outside the headphones they are wearing.',
         query: 'dance+music',
+        locations: ['KWD', 'PFD', 'SC']
     },
     {
         id: 811596174,
@@ -141,6 +154,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Sony PlayStatioin 4 or PlayStation 5 required to play (not included)\nGame not included.\nStereo headphones not included (borrower must supply own headphones/earbuds).\nESRB raging T (Teen): Mild language, violance.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: '',
         query: 'sony+playstation+vr',
+        locations: ['SC']
     },
     {
         id: 628829174,
@@ -151,6 +165,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Remember to reinsert the Micro SD memory card before you return the Spot thermal camera to the owning library.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.\nHold can be placed only by owning branch library patron.',
         summary: 'This camera can be used for area specific thermal assessment of energy efficiency in homes and buildings.',
         query: 'home+energy+efficiency',
+        locations: ['CAS', 'ENG']
     },
     {
         id: 470245174,
@@ -161,6 +176,7 @@ export const COLLECTION_ITEMS = [
         notes: 'Audio access included for Hal Leonard : Ukulele method book 1 by using code provided on title page and entering it on the website listed. "Audio access" availability varies.\nThe ukuleles that do not circulate and remain at the branch that have PROFREF status have a different practice book from the ukuleles that circulate. The practice book for the PROFREF ukuleles is titled The daily ukulele.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: 'Ukulele can be used to learn how to play and used for practice.',
         query: 'ukulele',
+        locations: ['CAS', 'COM', 'EGR', 'KRA', 'PFD',]
     },
     {
         id: 438187174,
@@ -171,5 +187,6 @@ export const COLLECTION_ITEMS = [
         notes: 'Data usage is unlimited.\nDevice model varies: Verizon Jetpack Mifi 6620L, Verizon Jetpack MiFi 7730L, Verizon Jetpack MiFi 8800L, Verizon Jetpack MHS900L, Verizon Orbic Speed RC400L.\nPatrons must be 18 years of age or older to borrow this kit. Library\'s Borrowing Agreement must be completed, acknowledging financial responsibility for lost, stolen or damaged equipment.\nKit must be returned directly to the staff (not in the drop box) at any KDL branch during open hour.',
         summary: '',
         query: 'home+networking+guide',
+        locations: ['ALT', 'CAS', 'ENG', 'KRA', 'NEL', 'SC']
     },
 ];
