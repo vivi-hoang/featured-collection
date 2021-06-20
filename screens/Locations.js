@@ -79,7 +79,6 @@ const Locations = ({route, navigation}) => {
                 console.log('Branch not found');
             } 
         })
-        console.log('Temp branch coords: ', tempBranchCoords);
         setBranchCoords(tempBranchCoords);
     }, []);
 

@@ -166,26 +166,32 @@ const ItemRecord = ({route, navigation}) => {
         }      
     }
 
-    return (        
-        <ScrollView style = { styles.container }>
-            <Image 
-                source = {{ uri: itemInfo.imageURL }} 
-                containerStyle = { styles.imageContainer } // Centers image
-                style = { styles.image } // Declares image size
-            />             
-            { renderItemTitle(itemInfo) }
-            { renderHoldButton(itemInfo.id) }
-            <Text style = { styles.metadata }>{ itemInfo.summary }</Text>            
-            <Text style = { styles.metadataTitle }>CONTENTS</Text>
-            <Text style = { styles.metadata }>{ itemInfo.characteristics }</Text>
-            <Text style = { styles.metadataTitle }>NOTES</Text>
-            <Text style = { styles.metadata }>{ itemInfo.notes }</Text>
-            <Text style = { [styles.note, styles.metadata] }>Please check on an item's availability in the KDL Catalog before visiting a KDL branch for pickup.</Text>
-            { renderLocationsButton(itemInfo.id) }
-            { renderCatalogButton(itemInfo.id) }
-            <Text style = { styles.metadataTitle }>RELATED READING</Text>
+    return (            
+            
             <View style = { styles.bookList }>
                 <FlatList
+                    ListHeaderComponent = {<>
+                        <View style = {styles.container}>
+                            <Image 
+                                source = {{ uri: itemInfo.imageURL }} 
+                                containerStyle = { styles.imageContainer } // Centers image
+                                style = { styles.image } // Declares image size
+                            />             
+                            { renderItemTitle(itemInfo) }
+                            { renderHoldButton(itemInfo.id) }
+                            <Text style = { styles.metadata }>{ itemInfo.summary }</Text>            
+                            <Text style = { styles.metadataTitle }>CONTENTS</Text>
+                            <Text style = { styles.metadata }>{ itemInfo.characteristics }</Text>
+                            <Text style = { styles.metadataTitle }>NOTES</Text>
+                            <Text style = { styles.metadata }>{ itemInfo.notes }</Text>
+                            <Text style = { [styles.note, styles.metadata] }>Please check on an item's availability in the KDL Catalog before visiting a KDL branch for pickup.</Text>
+                            { renderLocationsButton(itemInfo.id) }
+                            { renderCatalogButton(itemInfo.id) }
+                            <Text style = { styles.metadataTitle }>RELATED READING</Text>
+                        </View>
+                    </>}
+                    
+                    
                     data = { books }
                     keyExtractor = { (item) => item.id }
                     // If book array changes, re-render and include that data
@@ -193,7 +199,6 @@ const ItemRecord = ({route, navigation}) => {
                     renderItem = { renderBookList } // passes {index: i, item: {...}}
                 />
             </View>  
-        </ScrollView>        
     );
 };
 
