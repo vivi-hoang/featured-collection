@@ -15,19 +15,10 @@ export function storeFavoritesItem(number) {
     firebase.database().ref('favoritesData/').push(number);
 }
 
-{/*}
-// Retrieve Favorites item
-export function getFavoritesItem() {
-    let chosenFavoritesItem;
-    firebase
-        .database()
-        .ref('favoritesData/')
-        .on('value', querySnapShot => {
-            chosenFavoritesItem = querySnapShot.val();
-        });
-    return chosenFavoritesItem;
+// Remove Favorites object from Firebase
+export function deleteFavoritesItem(firebaseID) {
+    firebase.database().ref(`favoritesData/${firebaseID}`).remove();
 }
-*/}
 
 export function setupFavoritesListener(updateFunc) {
     console.log('setFavoritesListener called.');
@@ -41,7 +32,7 @@ export function setupFavoritesListener(updateFunc) {
                 const newArr = [];
                 Object.keys(firebaseObject).map((key, index) => {
                     console.log(key, '||', index, '||', firebaseObject[key]);
-                    newArr.push({ ...firebaseObject[key], 'firebaseID': key, 'itemID': firebaseObject[key]});
+                    newArr.push({ 'firebaseID': key, 'itemID': firebaseObject[key] });
                 });
                 updateFunc(newArr);
             } else {

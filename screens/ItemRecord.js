@@ -10,7 +10,7 @@ import { Image, ListItem } from 'react-native-elements';
 import { getBooks } from '../api/GoogleBooksServer';
 
 // FIREBASE
-import { initFavoritesDatabase, storeFavoritesItem, setupFavoritesListener } from '../firebase/Helpers';
+import { initFavoritesDatabase, storeFavoritesItem, deleteFavoritesItem, setupFavoritesListener } from '../firebase/Helpers';
 
 const ItemRecord = ({route, navigation}) => {
 
@@ -106,11 +106,21 @@ const ItemRecord = ({route, navigation}) => {
         )
     }
     
-    const renderHeart = (number) => {
+    const renderHeart = (item) => {
         return(
             <TouchableOpacity onPress = {() => {
-                toggleFunction()
-                storeFavoritesItem(number);
+                if (toggle == false) {                
+                    toggleFunction();
+                    storeFavoritesItem(item.id);
+                } else {
+                    toggleFunction();
+                    // Locate Firebase key in favorites array
+                    let obj = favorites.find(element => element.itemID === item.id);
+                    console.log('Firebase entry to be deleted: ')
+                    console.log(obj);
+                    console.log(`Firebase ID: ${obj.firebaseID}`);
+                    deleteFavoritesItem(obj.firebaseID);
+                }
             }}>
                 {toggle ? <AntDesign name='heart' size={18} color='#DB6860' /> : <AntDesign name='hearto' size={18} color='black' />}
             </TouchableOpacity>
@@ -123,7 +133,7 @@ const ItemRecord = ({route, navigation}) => {
                 <Text style = { styles.itemTitle }>
                     { item.text.toUpperCase() }
                 </Text>
-                { renderHeart(itemInfo.id) }
+                { renderHeart(itemInfo) }
             </View>
         )
     }
