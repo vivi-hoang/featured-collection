@@ -1,11 +1,16 @@
 // ./screens/ItemRecord.js
 
+// DEPENDENCIES
 import React, { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, Text, View, Button, Linking, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, Linking, FlatList, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Image, ListItem } from 'react-native-elements';
 
+// GOOGLE BOOKS
 import { getBooks } from '../api/GoogleBooksServer';
+
+// FIREBASE
+import { initFavoritesDatabase, writeData, setupFavoritesListener } from '../firebase/Helpers';
 
 const initialFavorites = [
     { name: 'Birdwatching backpack', id: 598759174, hearted: false },
@@ -29,6 +34,8 @@ const initialFavorites = [
 
 const ItemRecord = ({route, navigation}) => {
 
+    const initialFavorites = [571411174, 811596174] // Nintendo Switch and Sony Playstation VR Kit
+
     const chosenItem = route.params.item;
     const [itemInfo, setItemInfo] = useState(chosenItem);
 
@@ -38,7 +45,18 @@ const ItemRecord = ({route, navigation}) => {
 
     const toggleFunction = () => {
         setToggle(!toggle);
+        writeData('score', { toggle });
     };
+
+    // Initialize Firebase database once and only once
+    useEffect(() => {
+        try {
+            initFavoritesDatabase();
+        } catch (err) {
+            console.log(err);
+        }
+        setupFavoritesListener('score');
+    }, []);
 
     // Pull book list; run only once, when component is instantianted
     useEffect(() => {
@@ -90,56 +108,18 @@ const ItemRecord = ({route, navigation}) => {
             </View>
         )
     }
-
-    const getArrPosition = (item) => {
-        // Cycle through favorites array to find matching object        
-        for (let i = 0; i < favorites.length; i++) {
-            // Determine if that object has been hearted
-            if (favorites[i].name === item.text) {
-               return i;
-            }
-        }
-    }
-
-    const handleHeartPress = (item) => {
-        // Determine index of item in collection
-        let index = getArrPosition(item);
-        let newArr = [...favorites];
-        // Update hearted property of object in array to the opposite
-        newArr[index].hearted = !newArr[index].hearted;
-        favorites = newArr;
-        setFavorites(newArr);
-    }
-
-    const renderItemTitle = (item) => {
-        let index = getArrPosition(item); 
-        // If hearted, display solid heart
-        if (favorites[index].hearted == true) {
-            return (          
+    
+    const renderItemTitle = (item) => {        
+        return (          
+            <View style = {styles.titleContainer}>
                 <Text style = { styles.itemTitle }>
-                    { item.text.toUpperCase() }&nbsp;                
-                    <TouchableOpacity onPress = {() => {
-                        toggleFunction();
-                        //handleHeartPress(item);
-                    }}>
-                        {toggle ? <AntDesign name='heart' size={18} color='#DB6860' /> : <AntDesign name='hearto' size={18} color='black' />}
-                    </TouchableOpacity>  
+                    { item.text.toUpperCase() }
                 </Text>
-            )
-        // Else display empty heart
-        } else {
-            return (          
-                <Text style = { styles.itemTitle }>
-                    { item.text.toUpperCase() }&nbsp;                
-                    <TouchableOpacity onPress = {() => {
-                        toggleFunction();
-                        //handleHeartPress(item);
-                    }}>
-                        {toggle ? <AntDesign name='hearto' size={18} color='black' /> : <AntDesign name='heart' size={18} color='#DB6860' />}
-                    </TouchableOpacity>  
-                </Text>
-            )
-        }
+                <TouchableOpacity onPress = {() => toggleFunction()}>
+                    {toggle ? <AntDesign name='heart' size={18} color='#DB6860' /> : <AntDesign name='hearto' size={18} color='black' />}
+                </TouchableOpacity>
+            </View>
+        )
     }
 
     const renderBookList = ({index, item}) => {
@@ -215,6 +195,11 @@ const styles = StyleSheet.create({
     image: {
         width: 250,
         height: 250,
+    },
+    titleContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
     },
     itemTitle: {
         fontSize: 18,

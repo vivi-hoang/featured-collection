@@ -9,8 +9,15 @@ export function initFavoritesDatabase() {
     firebase.initializeApp(firebaseConfig);
 }
 
+// Taking Favorites database and getting reference to Favorites data
+// Associate a JSON object with that reference/key
+export function writeData(key, data) {
+    firebase.database().ref(`favoritesData/${key}`).set(data);
+}
+
+{/*}
 // Write out Favorites object
-// Push writes a new object and generates a unique keey that it associates with object
+// Push writes a new object and generates a unique key that it associates with object
 export function storeFavoritesItem(item) {
     firebase.database().ref('favoritesData/').push(item);
 }
@@ -26,13 +33,14 @@ export function getFavoritesItem() {
         });
     return chosenFavoritesItem;
 }
+*/}
 
-// Get data back from database
-// Pass in a key and listen for updates on that key
+// Setup listener on database for whatever key we specify
+// If there's data on that key, log it.
 export function setupFavoritesListener(key) {
     firebase
         .database()
-        .ref('favoritesData/')
+        .ref(`favoritesData/${key}`)
         .on('value', (snapshot) => {
             console.log('setupFavoritesListener fires up with ', snapshot);
         });
