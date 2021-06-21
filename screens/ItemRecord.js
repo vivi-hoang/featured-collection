@@ -12,29 +12,7 @@ import { getBooks } from '../api/GoogleBooksServer';
 // FIREBASE
 import { initFavoritesDatabase, storeFavoritesItem, setupFavoritesListener } from '../firebase/Helpers';
 
-const initialFavorites = [
-    { name: 'Birdwatching backpack', id: 598759174, hearted: false },
-    { name: 'Chromebook combo', id: 797984174, hearted: false },
-    { name: 'GoPro camera', id: 441869174, hearted: false }, 
-    { name: 'Green Cross Line Laser kit', id: 810990174, hearted: false },
-    { name: 'Green screen and umbrella light kit', id: 438196174, hearted: false },
-    { name: 'iPad Air 2', id: 186464174, hearted: false },
-    { name: 'KDL Cruiser', id: 451283174, hearted: false },
-    { name: 'Kill a Watt EZ Meter', id: 188154174, hearted: false },
-    { name: 'Nintendo Switch', id: 571411174, hearted: false },
-    { name: 'Nintento Switch Ring Fit Adventure', id: 811229174, hearted: false },
-    { name: 'Portable projector and screen', id: 810272174, hearted: false },
-    { name: 'Portable turntable', id: 645852174, favheartedorite: false },
-    { name: 'Silent Disco kit', id: 658724174, hearted: false },
-    { name: 'Sony Playstation VR Kit', id: 811596174, hearted: false },
-    { name: 'Spot thermal camera', id: 628829174, hearted: false },
-    { name: 'Ukelele', id: 470245174, hearted: false },
-    { name: 'WiFi Verizon hotspot', id: 438187174, hearted: false }
-]
-
 const ItemRecord = ({route, navigation}) => {
-
-    const initialFavorites = [571411174, 811596174] // Nintendo Switch and Sony Playstation VR Kit
 
     const chosenItem = route.params.item;
     const [itemInfo, setItemInfo] = useState(chosenItem);
@@ -54,12 +32,27 @@ const ItemRecord = ({route, navigation}) => {
         } catch (err) {
             console.log(err);
         }
-        // Pull list of favorites from Firebase and setFavorites with that array
-        // On loading page, update heart based on data stored in Firebase
+    }, []);
+
+    // Pull list of favorites from Firebase and setFavorites with that array
+    useEffect(() => {     
+        // Added this to avoid 'Can't perform a React state update on an unmounted component' error 
+        let isMounted = true;         
+        
         setupFavoritesListener((items) => {
-            console.log('Items currently stored in Firebase: ', items);
-            setFavorites(items);
+            if (isMounted) {
+                console.log('Items pushed into setFavorites: ', items);
+                setFavorites(items);
+            }
+            // On loading page, update heart based on data stored in Firebase
+            const foundInFavorites = items.some(item => item.itemID === itemInfo.id);
+            if (foundInFavorites) {
+                setToggle(true);
+            }    
         });
+        
+        // This is useEffect cleanup function
+        return () => { isMounted = false; }  
     }, []);
 
     // Pull book list; run only once, when component is instantianted

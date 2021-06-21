@@ -47,5 +47,6 @@ export function setupFavoritesListener(updateFunc) {
             } else {
                 updateFunc([]);
             }
-        });
+        }
+    );
 }
