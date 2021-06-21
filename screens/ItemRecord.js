@@ -41,7 +41,6 @@ const ItemRecord = ({route, navigation}) => {
         
         setupFavoritesListener((items) => {
             if (isMounted) {
-                console.log('Items pushed into setFavorites: ', items);
                 setFavorites(items);
             }
             // On loading page, update heart based on data stored in Firebase
@@ -114,11 +113,8 @@ const ItemRecord = ({route, navigation}) => {
                     storeFavoritesItem(item.id);
                 } else {
                     toggleFunction();
-                    // Locate Firebase key in favorites array
+                    // Locate Firebase object with key matching key in favorites array
                     let obj = favorites.find(element => element.itemID === item.id);
-                    console.log('Firebase entry to be deleted: ')
-                    console.log(obj);
-                    console.log(`Firebase ID: ${obj.firebaseID}`);
                     deleteFavoritesItem(obj.firebaseID);
                 }
             }}>

@@ -2,16 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, View, Image } from "react-native";
-import { Button, Card } from 'react-native-elements';
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 // Data
 import { COLLECTION_ITEMS } from "../data/Items";
-
-// Alphabetize list
-const comparator = (item1, item2) => {
-    return item1.text > item2.text;
-}
 
 const AllItems = ({route, navigation}) => {
 
@@ -40,7 +34,7 @@ const AllItems = ({route, navigation}) => {
     return (
         <View style = {styles.container}>
         <FlatList
-            data = { COLLECTION_ITEMS }
+            data = { beyondBooksItems }
             keyExtractor={(item) => item.id.toString()}
             renderItem={ renderItemCard }
         />       
