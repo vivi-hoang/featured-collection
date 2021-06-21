@@ -45,7 +45,6 @@ const ItemRecord = ({route, navigation}) => {
 
     const toggleFunction = () => {
         setToggle(!toggle);
-
     };
 
     // Initialize Firebase database once and only once
@@ -55,7 +54,12 @@ const ItemRecord = ({route, navigation}) => {
         } catch (err) {
             console.log(err);
         }
-        setupFavoritesListener('score');
+        // Pull list of favorites from Firebase and setFavorites with that array
+        // On loading page, update heart based on data stored in Firebase
+        setupFavoritesListener((items) => {
+            console.log('Items currently stored in Firebase: ', items);
+            setFavorites(items);
+        });
     }, []);
 
     // Pull book list; run only once, when component is instantianted
@@ -109,18 +113,24 @@ const ItemRecord = ({route, navigation}) => {
         )
     }
     
+    const renderHeart = (number) => {
+        return(
+            <TouchableOpacity onPress = {() => {
+                toggleFunction()
+                storeFavoritesItem(number);
+            }}>
+                {toggle ? <AntDesign name='heart' size={18} color='#DB6860' /> : <AntDesign name='hearto' size={18} color='black' />}
+            </TouchableOpacity>
+        )        
+    }
+
     const renderItemTitle = (item) => {        
         return (          
             <View style = {styles.titleContainer}>
                 <Text style = { styles.itemTitle }>
                     { item.text.toUpperCase() }
                 </Text>
-                <TouchableOpacity onPress = {() => {
-                    toggleFunction()
-                    storeFavoritesItem(item.id);
-                }}>
-                    {toggle ? <AntDesign name='heart' size={18} color='#DB6860' /> : <AntDesign name='hearto' size={18} color='black' />}
-                </TouchableOpacity>
+                { renderHeart(itemInfo.id) }
             </View>
         )
     }
@@ -209,7 +219,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',        
         marginRight: 5,
-        //textAlign: 'center',
     },
     metadataTitle: {
         fontWeight: 'bold',

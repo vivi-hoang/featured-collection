@@ -29,13 +29,23 @@ export function getFavoritesItem() {
 }
 */}
 
-// Setup listener on database for whatever key we specify
-// If there's data on that key, log it.
-export function setupFavoritesListener(key) {
+export function setupFavoritesListener(updateFunc) {
+    console.log('setFavoritesListener called.');
     firebase
         .database()
-        .ref(`favoritesData/${key}`)
+        .ref(`favoritesData/`)
         .on('value', (snapshot) => {
-            console.log('setupFavoritesListener fires up with ', snapshot);
+            if (snapshot?.val()) {
+                // Save entire firebase object to variable
+                const firebaseObject = snapshot.val();
+                const newArr = [];
+                Object.keys(firebaseObject).map((key, index) => {
+                    console.log(key, '||', index, '||', firebaseObject[key]);
+                    newArr.push({ ...firebaseObject[key], 'firebaseID': key, 'itemID': firebaseObject[key]});
+                });
+                updateFunc(newArr);
+            } else {
+                updateFunc([]);
+            }
         });
 }
