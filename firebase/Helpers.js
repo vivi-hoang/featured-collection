@@ -21,7 +21,6 @@ export function deleteFavoritesItem(firebaseID) {
 }
 
 export function setupFavoritesListener(updateFunc) {
-    console.log('setFavoritesListener called.');
     firebase
         .database()
         .ref(`favoritesData/`)
@@ -31,7 +30,6 @@ export function setupFavoritesListener(updateFunc) {
                 const firebaseObject = snapshot.val();
                 const newArr = [];
                 Object.keys(firebaseObject).map((key, index) => {
-                    console.log(key, '||', index, '||', firebaseObject[key]);
                     newArr.push({ 'firebaseID': key, 'itemID': firebaseObject[key] });
                 });
                 updateFunc(newArr);

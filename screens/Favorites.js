@@ -8,7 +8,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { COLLECTION_ITEMS } from "../data/Items";
 
 // FIREBASE
-import { setupFavoritesListener } from '../firebase/Helpers';
+import { initFavoritesDatabase, setupFavoritesListener } from '../firebase/Helpers';
 
 // Alphabetize list
 const comparator = (item1, item2) => {
@@ -19,6 +19,15 @@ const Favorites = ({route, navigation}) => {
 
     const [favoritesFromFirebase, setFavoritesFromFirebase] = useState([]);
     const [favorites, setFavorites] = useState([])
+
+    // Initialize Firebase database once and only once
+    useEffect(() => {
+        try {
+            initFavoritesDatabase();
+        } catch (err) {
+            console.log(err);
+        }
+    }, []);
 
     // Pull list of favorites from Firebase and setFavorites with that array of objects
     useEffect(() => {     
@@ -42,9 +51,7 @@ const Favorites = ({route, navigation}) => {
                 // Push object onto tempFavorites array
                 tempFavorites.push(obj);
             })
-            console.log('Temporary favorites: ')
-            console.log(tempFavorites);
-            setFavorites(tempFavorites);
+            setFavorites(tempFavorites.sort(comparator));
 
         });
         

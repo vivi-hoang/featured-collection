@@ -71,6 +71,9 @@ const FavoritesStackNavigator = () => {
             }}      
         >
             <Stack.Screen name='Favorites' component = { Favorites } />
+            <Stack.Screen name='Item Record' component = { ItemRecord } />
+            <Stack.Screen name='Book Preview' component = { BookViewer } />
+            <Stack.Screen name='Locations' component = { Locations } />
         </Stack.Navigator>
     );
 }
