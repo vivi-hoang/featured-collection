@@ -9,19 +9,13 @@ export function initFavoritesDatabase() {
     firebase.initializeApp(firebaseConfig);
 }
 
-// Taking Favorites database and getting reference to Favorites data
-// Associate a JSON object with that reference/key
-export function writeData(key, data) {
-    firebase.database().ref(`favoritesData/${key}`).set(data);
+// Write out Favorites object
+// Push writes a new object and generates a unique key that it associates with object
+export function storeFavoritesItem(number) {
+    firebase.database().ref('favoritesData/').push(number);
 }
 
 {/*}
-// Write out Favorites object
-// Push writes a new object and generates a unique key that it associates with object
-export function storeFavoritesItem(item) {
-    firebase.database().ref('favoritesData/').push(item);
-}
-
 // Retrieve Favorites item
 export function getFavoritesItem() {
     let chosenFavoritesItem;
