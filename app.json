@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Beyond Books",
-    "slug": "Beyond Books",
+    "slug": "beyondbooks",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,7 +19,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.lib.beyondbooks",
-	  "buildNumber": "1.0.0",
+      "buildNumber": "1.0.0",
       "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
@@ -27,9 +27,9 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "edu.gvsu.reminders",
-	  "versionCode": 1,
-	  "googleServicesFile": "./google-services.json"
+      "package": "com.lib.beyondbooks",
+      "versionCode": 1,
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -44,7 +44,8 @@
           "appId": "1:28956125593:web:f75179c14501ec2fd64b08",
           "measurementId": "G-ZB50LFMM7J"
         }
-      }      
-    }
+      }
+    },
+    "description": ""
   }
 }

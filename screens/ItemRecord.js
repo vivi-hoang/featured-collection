@@ -139,7 +139,7 @@ const ItemRecord = ({route, navigation}) => {
             return (
                 <TouchableOpacity
                     onPress = {() => {
-                        navigation.navigate('Book Preview', item);
+                        navigation.navigate('Book Details', item);
                     }}                
                 >
                     <ListItem key = {index} bottomDivider>
